@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="referrer" content="no-referrer" />
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <title>挂号页面</title><link href="" type="image/x-icon" rel="shortcut icon"/>
+    <link rel="stylesheet" type="text/css" href="../Hospital/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../Hospital/css/lyc.css">
+    <link rel="stylesheet" type="text/css" href="../Hospital/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../Hospital/css/page.css">
+    <script src="../Hospital/js/jquery.min.js"></script>
+    <script src="../Hospital/js/global.js"></script>
+    <script src="../Hospital/js/jquery.mousewheel.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Hospital/css/jquery.mCustomScrollbar.css">
+    <script src="../Hospital/js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="../Hospital/js/slick.js"></script>
+
+</head>
+
+<body>
+<link href="../Hospital/css/global.css" rel="stylesheet" type="text/css" />
+
+<div id="myalert-shadow" class="myalert-shadow"></div>
+<div id="myalert" class="dev-alert">
+    <div id="my_alert" class="inner">
+        <h1></h1>
+        <div class="btns"><a id="my_ok" href="javascript:void(0);" class="button ok">确定</a></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function my_alert( title, url) {
+        $('#myalert, #myalert-shadow').show();
+        $('#myalert .inner h1').html(title);
+        if(url){
+            $('#my_ok').click(function(){
+                if (typeof(url) == 'function') {
+                    url();
+                    return false;
+                }else{
+                    window.location.href=url;
+                }
+
+            });
+        }else{
+            $('#my_ok').click(function(){
+                $('#myalert, #myalert-shadow').hide();
+            });
+        }
+    }
+    function myalert_hide(){
+        $('#myalert, #myalert-shadow').hide();
+    }
+</script>
+<div class="rightNav"><ul>
+    <li>
+        <a href="../Hospital/register.html" target="_blank">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/12/15/s5a3391c2731ce.png" alt="">
+            </span>
+            <span class="s2">预约挂号</span>
+        </a>
+    </li>
+    <li>
+        <a href="../Hospital/visitinfo.html" target="_blank">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f10b7c2f1.png" alt="">
+            </span>
+            <span class="s2">门诊出诊</span>
+        </a>
+    </li>
+    <li>
+        <a href="../Hospital/characteristic.html" target="_blank">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f377cf196.png" alt="">
+            </span>
+            <span class="s2">特色科室</span>
+        </a>
+    </li>
+    <li>
+        <a href="" target="_blank">
+            <span class="s1">
+                <img src="../Hospital/pictures/2019/08/15/s5d551e15a425b.png" title="" alt="">
+            </span>
+            <span class="s2">远程医疗</span>
+        </a>
+    </li>
+    <li>
+        <a href="../Hospital/reportquery.html" target="_blank">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2018/03/22/s5ab35182e9b81.png" alt="">
+            </span>
+            <span class="s2">报告查询</span>
+        </a>
+    </li>
+    <li class="w li4">
+        <a href="javascript:">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f3d214f87.png" alt="">
+            </span>
+            <span class="s3">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f3d316bea.png" alt="">
+            </span>
+        </a>
+        <div class="r_ewm">
+            <i></i>
+            <img title="" src="../Hospital/pictures/2017/11/21/s5a13f3f0555b4.jpg" alt="">
+        </div>
+    </li>
+    <li class="w">
+        <a href="javascript:">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f42c76838.png" alt="">
+            </span>
+            <span class="s3">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f42d6591f.png" alt="">
+            </span>
+        </a>
+        <div class="r_ewm">
+            <i></i>
+            <img title="" src="../Hospital/pictures/2018/01/12/s5a588a95819b9.jpg" alt="">
+        </div>
+    </li>
+    <li class="w">
+        <a href="javascript:">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f487774a6.png" alt="">
+            </span>
+            <span class="s3">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f4885951b.png" alt="">
+            </span>
+        </a>
+        <div class="r_ewm">
+            <i></i>
+            <img title="" src="../Hospital/pictures/2018/01/12/s5a588aafcbb35.jpg" alt="">
+        </div>
+    </li>
+
+    <li class="goto">
+        <a href="javascript:">
+            <span class="s1">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f67f86b3d.png" alt="">
+            </span>
+            <span class="s3">
+                <img title="" src="../Hospital/pictures/2017/11/21/s5a13f68083622.png" alt="">
+            </span>
+        </a>
+    </li>
+</ul></div><div class="header"><a href="javascript:" class="menu_h"><span>Menu</span></a>
+    <div class="top">
+        <div class="wrap">
+            <a href="http://www.pumch.cn/en.html" class="en ">en</a>
+            <a href="http://www.pumch.cn/staff.html" >员工版</a>
+            <a href="http://www.pumch.cn/learning.html" >学术版</a>
+            <a href="http://www.pumch.cn/patient.html" class="on">患者版</a>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="wrap cf">
+            <div class="navList">
+                <ul class="cf">
+                    <li>
+                        <a href="../Hospital/register.html" class="one">预约挂号<span class="open">+</span></a>
+                        <div class="secondNav">
+                            <a href="../Hospital/register.html">APP预约</a>
+                            <a href="../Hospital/register.html?tab=电话预约">电话预约</a>
+                            <a href="../Hospital/register.html?tab=国际医疗部预约">国际医疗部预约</a>
+                            <a href="../Hospital/register.html?tab=网上预约">网上预约</a>
+                            <a href="../Hospital/register.html?tab=银行卡预约">银行卡预约</a>
+                            <a href="../Hospital/register.html?tab=自助机预约">自助机预约</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../Hospital/characteristic.html" class="one">特色诊疗<span class="open">+</span></a>
+                        <div class="secondNav">
+                            <a href="../Hospital/characteristic.html">疑难病会诊中心</a>
+                            <a href="">远程医学中心</a>
+                            <a href="../Hospital/characteristic.html">特色科室</a>
+                            <a href="../Hospital/characteristic.html">专科专病</a>
+                            <a href="../Hospital/characteristic.html">诊疗新技术</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../Hospital/doctors.html" class="one">医生介绍</a>
+                    </li><li>
+                    <a href="../Hospital/department.html" class="one">科室导航</a>
+                </li><li>
+                    <a href="../Hospital/visitinfo.html" class="one">就医指南<span class="open">+</span></a>
+                    <div class="secondNav">
+                        <a href="../Hospital/visitinfo.html">门诊出诊表</a>
+                        <a href="../Hospital/regulations.html">规章制度</a>
+                        <a href="../Hospital/medical_notice.html">就医须知</a>
+                        <a href="../Hospital/medical_guide.html">医保指南</a>
+                        <a href="../Hospital/nosocomial.html">医院位置</a>
+                        <a href="../Hospital/azimuth.html">院内导航</a>
+                        <a href="../Hospital/community.html">社区转诊</a>
+                        <a href="../Hospital/price_publicity.html">价格公示</a>
+                        <a href="../Hospital/query_service.html">查询服务</a>
+                        <a href="../Hospital/letter_thanks.html">感谢信</a>
+                        <a href="../Hospital/feedback.html">意见反馈</a>
+                        <a href="../Hospital/reportquery.html">报告查询</a>
+                        <a href="../Hospital/patientQA.html">患者问答</a>
+                    </div>
+                </li>
+                    <li>
+                        <a href="../Hospital/pnotice.html" class="one">医院公告</a>
+                    </li><li>
+                    <a href="../Hospital/bignews.html" class="one">新闻中心<span class="open">+</span></a>
+                    <div class="secondNav">
+                        <a href="../Hospital/bignews.html">重大新闻</a>
+                        <a href="../Hospital/tends.html">医院动态</a>
+                        <a href="../Hospital/fronts.html">医学前沿</a>
+                        <a href="../Hospital/medias.html">媒体聚焦</a>
+                        <a href="../Hospital/humanities.html">人文关怀</a>
+                        <a href="../Hospital/newspapers.html">协和院报</a>
+                        <a href="../Hospital/videos.html">视频新闻</a>
+                    </div>
+                </li>
+                    <li>
+                        <a href="../Hospital/popular.html" class="one">健康科普</a>
+                    </li>
+                </ul>
+                <div class="ul" style="padding-top:0">
+                </div>
+            </div>
+            <div class="shareNav cf" >
+                <a href="javascript:" class="seachBtn" title="搜索"></a>
+                <div class="seach_w">
+                    <div class="inp">
+                        <label for="keywords"></label>
+                        <input id="keywords" type="text" placeholder="请输入搜索内容" />
+                    </div>
+                    <a href="javascript:" class="btn_sea"></a>
+                </div>
+                <a href="javascript:" class="shareBtn" title="分享"></a>
+                <div class="share_w">
+                    <div class="bdsharebuttonbox">
+                        <a href="#" title="分享到微信" class="popup_wx" data-cmd="weixin"></a>
+                        <a href="#" title="分享到qq好友" class="popup_sqq" data-cmd="sqq"></a>
+                        <a href="#" title="分享到新浪微博" class="bds_tsina" data-cmd="tsina"></a>
+                        <a href="#" title="分享到qq空间" class="popup_qzone" data-cmd="qzone"></a>
+                        <a href="#" title="分享到腾讯微博" class="popup_tqf" data-cmd="tqf"></a>
+                    </div>
+                </div>
+
+                <script>
+                    $(function(){
+                        $('.btn_sea').on('click', function(){
+                            var keywords = $('#keywords').val();
+                            if ( $.trim(keywords) === '' || keywords === '请输入搜索内容' ) {
+                                return false;
+                            }
+
+                            window.location.href = "/searchs/patient/" + keywords + ".html";
+                        });
+
+                        $('#keywords').on('keyup', function(e){
+                            if(e.keyCode===13){
+                                $('.btn_sea').click();
+                            }
+                        });
+                    })
+                </script>
+
+                <script>
+                    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/Public/static/baiduShare/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="../Hospital/css/lyc.css">
+
+<script src="../Hospital/js/"></script>
+
+<style>
+    .text b, .text strong {font-weight: bold;}
+    .apppage .tabs_box .tbright .text{ font-size: 16px; }
+</style>
+
+<div class="body_box apppage">
+    <div class="position">
+        <div class="block">您现在的位置：
+            <a href="../Hospital/patient.html">首页</a>
+            &gt; <a href="../Hospital/register.html">预约挂号</a>	</div>
+    </div>
+    <div class="foucs">
+        <div class="block">
+            <div class="title1">预约挂号</div>
+            <div class="button">
+                <a href="javascript:" class="prev"></a>
+                <a href="javascript:" class="next"></a>
+            </div>
+            <div class="frame">
+                <div class="child now"> <a linkage-id="990386" href="javascript:void(0);">APP预约</a> </div><div class="child ">
+                <a linkage-id="990390" href="javascript:void(0);">电话预约</a> </div><div class="child ">
+                <a linkage-id="990391" href="javascript:void(0);">国际医疗部预约</a> </div><div class="child ">
+                <a linkage-id="990389" href="javascript:void(0);">网上预约</a> </div><div class="child ">
+                <a linkage-id="990388" href="javascript:void(0);">银行卡预约</a> </div><div class="child ">
+                <a linkage-id="990387" href="javascript:void(0);">自助机预约</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="tabs_box" id="list">
+        <div class="block">
+            <div class="tbleft">
+                <div class="part1">
+                    <div class="inner">
+                        <div class="scroll mCustomScrollbar">
+                            <div class="item now">
+                                <a data-id="19826" href="javascript:void(0);">北京协和医院挂号攻略：网络挂号更快捷！</a>
+                            </div><div class="item "> <a data-id="12391" href="javascript:void(0);">APP使用教程</a>
+                        </div><div class="item "> <a data-id="19680" href="javascript:void(0);">协和APP 35项功能介绍</a>
+                        </div><div class="item "> <a data-id="12390" href="javascript:void(0);">预约挂号等功能介绍</a>
+                        </div><div class="item "> <a data-id="19462" href="javascript:void(0);">语音助手功能升级</a>
+                        </div><div class="item "> <a data-id="19461" href="javascript:void(0);">超声改约功能介绍</a>
+                        </div><div class="item "> <a data-id="19309" href="javascript:void(0);">APP采血预约使用指南</a>
+                        </div><div class="item "> <a data-id="12389" href="javascript:void(0);">门诊报到、候诊查询、候诊提醒功能介绍</a>
+                        </div><div class="item "> <a data-id="12388" href="javascript:void(0);">自助缴费功能介绍</a>
+                        </div><div class="item "> <a data-id="12387" href="javascript:void(0);">取报告单、处方查询、手术查询功能介绍</a>
+                        </div><div class="item "> <a data-id="12386" href="javascript:void(0);">体检预约、体检报告功能介绍</a>
+                        </div><div class="item "> <a data-id="12385" href="javascript:void(0);">病历建档功能介绍</a>
+                        </div><div class="item "> <a data-id="12384" href="javascript:void(0);">院内导航功能介绍</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="part2">
+                    <div class="inner">
+                        <div class="caption">出诊信息查询</div>
+                        <div class="from">
+                            <div class="item">
+                                <!-- <span>疾病名称</span> -->
+                                <div class="input">
+                                    <input id="techang" type="text" value="疾病名称">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <!-- <span>科室名称</span> -->
+                                <div class="input">
+                                    <input id="keshiname" type="text" value="科室名称">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <!-- <span>医师名称</span> -->
+                                <div class="input">
+                                    <input id="title" type="text" value="医师名称">
+                                </div>
+                            </div>
+                            <div class="button">
+                                <a href="javascript:" id="search-btn">选好了，去查询</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('#techang,#keshiname,#title').on('keyup', function(e){
+                        if(e.keyCode==13){
+                            $('#search-btn').click();
+                        }
+                    });
+                    /*出诊信息查询*/
+                    var val,ibox,val1;
+                    $(".apppage .tabs_box .tbleft .part2 .item").hover(function(){
+                        ibox = $(this).find('input');
+                        val = ibox.val();
+                        val1 = ibox.attr("value");
+                        if(ibox.val() == "" || ibox.val() == val1){
+                            ibox.val("");
+                        }else{
+                            ibox.focus();
+                        }
+
+                        ibox.select();
+                    });
+
+                    $(".apppage .tabs_box .tbleft .part2 .item input").bind('blur',function(){
+                        var val = $(this).val();
+                        if(val=="" || val==$(this).attr("value")){
+                            $(this).val($(this).attr("value"));
+                        }
+                    });
+                    $('#search-btn').click(function(){
+                        var techang = $('#techang').val();
+                        var keshiname = $('#keshiname').val();
+                        var title = $('#title').val();
+
+                        techang = (techang != '疾病名称') ? techang : '';
+                        keshiname = (keshiname != '科室名称') ? keshiname : '';
+                        title = (title != '医师名称') ? title : '';
+
+                        var _url = '/department_ims/visitsearch.html';
+                        _url = _url + '?techang=' + encodeURI(techang) + '&keshiname=' + encodeURI(keshiname) + '&title=' + encodeURI(title);
+
+                        window.location.href = _url;
+                    });
+                </script>
+
+            </div>
+            <div class="tbright">
+                <div class="inner">
+                    <div class="scroll mCustomScrollbar" id="right_detail">
+                        <div class="caption">北京协和医院挂号攻略：网络挂号更快捷！</div>
+                        <div class="text">
+                            <p><embed src="" flashvars="f=../Hospital/pictures/2018/08/16/u5b74f8650fb27.mp4" allowfullscreen="true" data-src="../Hospital/pictures/2018/08/16/u5b74f8650fb27.mp4" type="video/mp4" width="550" height="400" autostart="false" loop="true" /></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $('.tbleft .part1').on('click', 'a', function(){
+                $(this).parent().addClass('now');
+                $(this).parent().siblings('.item').removeClass('now');
+                var data_id = $(this).attr('data-id');
+                $.get("/Article/Index/detail.html", {id: data_id, 'dir_name': 'patient', 'tpl_file': 'register_detail'}, function(data){
+                    if ( data ) {
+                        $('#right_detail').html(data);
+                        $('.mCustomScrollbar').mCustomScrollbar();
+                    }
+                });
+            });
+
+            var child = $('.apppage .foucs .child'),
+                block = $('.apppage .tabs_box .block'),
+                width = $(window).width();
+            if (width <= 750) {
+                if (block.find(".tbright").next(".tbleft").length == 0) {
+                    block.each(function() {
+                        var tableft = $(this).find('.tbleft').clone(true);
+                        $(this).find(".part2").remove();
+                        tableft.find(".part1").remove();
+                        $(this).append(tableft);
+                    });
+                }
+            }
+        </script>
+
+    </div>
+    <div class="pubc-box"><style>
+        .pubc-box .list .item.i1 .img {background: url(../Hospital/pictures/2017/12/15/s5a3387ca565d2.png) center no-repeat;}
+        .pubc-box .list .item.i1:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style><style>
+        .pubc-box .list .item.i2 .img {background: url(../Hospital/pictures/2017/12/15/s5a3387ca565d2.png) center no-repeat;}
+        .pubc-box .list .item.i2:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style><style>
+        .pubc-box .list .item.i3 .img {background: url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png) center no-repeat;}
+        .pubc-box .list .item.i3:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style><style>
+        .pubc-box .list .item.i4 .img {background: url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png) center no-repeat;}
+        .pubc-box .list .item.i4:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style><style>
+        .pubc-box .list .item.i5 .img {background: url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png) center no-repeat;}
+        .pubc-box .list .item.i5:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style><style>
+        .pubc-box .list .item.i6 .img {background: url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png) center no-repeat;}
+        .pubc-box .list .item.i6:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style><style>
+        .pubc-box .list .item.i7 .img {background: url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png) center no-repeat;}
+        .pubc-box .list .item.i7:hover .img{background-image:url(../Hospital/pictures/2017/11/21/s5a13f3d214f87.png)}
+    </style>
+        <div class="block">
+            <div class="title1">了解这些有可能对您的就诊有所帮助</div>
+            <div class="list clearfix">
+                <div class="item i1">
+                    <a class="vertical" href="../Hospital/visitinfo.html">
+                        <div class="icon-box">
+                            <div class="img">
+                            </div>
+                            <div class="h2">门诊出诊表</div>
+                        </div>
+                    </a>
+                </div><div class="item i2">
+                <a class="vertical" href="../Hospital/medical_notice.html">
+                    <div class="icon-box">
+                        <div class="img">
+                        </div>
+                        <div class="h2">就医须知</div>
+                    </div>
+                </a>
+            </div><div class="item i3">
+                <a class="vertical" href="../Hospital/azimuth.html">
+                    <div class="icon-box">
+                        <div class="img">
+                        </div>
+                        <div class="h2">方位指南</div>
+                    </div>
+                </a>
+            </div><div class="item i4">
+                <a class="vertical" href="../Hospital/characteristic.html#part3">
+                    <div class="icon-box">
+                        <div class="img">
+                        </div>
+                        <div class="h2">专科专病</div>
+                    </div>
+                </a>
+            </div><div class="item i5">
+                <a class="vertical" target="_blank" href="http://ims.pumch.cn/">
+                    <div class="icon-box">
+                        <div class="img">
+                        </div>
+                        <div class="h2">国际医疗部</div>
+                    </div>
+                </a>
+            </div><div class="item i6">
+                <a class="vertical" href="../Hospital/department_tijzx.html">
+                    <div class="icon-box">
+                        <div class="img">
+                        </div>
+                        <div class="h2">健康体检</div>
+                    </div>
+                </a>
+            </div><div class="item i7">
+                <a class="vertical" href="../Hospital/popular.html">
+                    <div class="icon-box">
+                        <div class="img">
+                        </div>
+                        <div class="h2">健康科普</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var $_GET = (function(){
+        var url = window.document.location.href.toString();
+        var u = url.split("?");
+        if(typeof(u[1]) == "string"){
+            u = u[1].split("&");
+            var get = {};
+            for(var i in u){
+                var j = u[i].split("=");
+                get[j[0]] = j[1];
+            }
+            return get;
+        } else {
+            return {};
+        }
+    })();
+
+    $(function(){
+        var child = $('.apppage .foucs .child'),
+            block = $('.apppage .tabs_box .block');
+
+        var num;
+        var index = $('.apppage .foucs .frame .child.now').index();    //  ----------------  此处 为  当前选中的  索引值
+        var idx = index + 1;
+        var width = $(this).width();
+        if(width>1279){
+            num = 7;
+        }else if( width<= 1279 && width>750){
+            num = 4;
+        }else if(width<=750){
+            num = 3;
+        }
+        $('.apppage .foucs .frame').slick({
+            autoplay:false,
+            infinite: false,
+            slide:".child",
+            speed: 300,
+            slidesToShow: num,
+            slidesToScroll: 1,
+            touchMove:false
+        });
+        var len = idx - num;
+        if(len<=-1){
+            $('.apppage .foucs .frame').slickGoTo(index)
+        }else{
+            $('.apppage .foucs .frame').slickGoTo(len)
+        }
+        child.bind('click', function() {
+            var index = $(this).index();
+            $(this).addClass('now').siblings().removeClass('now');
+            block.eq(index).show().siblings().hide();
+        })
+
+
+        var search_url = "/searchs/register.html";
+        var search = {
+            category_id: "4"
+        };
+        search['classify'] = $('.frame .child').find('a:first').attr('linkage-id');
+        search['p'] = 1;
+        search['pagesize'] = 1000;
+        // refrush(search_url, search);
+
+        // 点击顶部切换
+        $('.frame .child').on('click', 'a', function(){
+            search['classify'] = $(this).attr('linkage-id');
+            refrush(search_url, search);
+        });
+        if($_GET['tab']){
+            var _hash = decodeURI($_GET['tab']);
+            child.each(function(i){
+                if($(this).find('a').text() == _hash){
+                    $(this).find('a').click();
+                    return false;
+                }
+            })
+        }
+    })
+    function refrush(url, datas) {
+        $.get(url + '?' + Math.random(), datas, function(data){
+            if(data) {
+                $('#list').html(data);
+            }
+
+            $('.mCustomScrollbar').mCustomScrollbar();
+        });
+    }
+</script>
+
+<div class="footer">
+    <div class="link"><div class="wrap cf">
+        <span class="l">友情链接：</span>
+        <div class="a">
+            <a  href="http://www.nhc.gov.cn/"  target="_blank">中华人民共和国国家卫生健康委员会</a><a  href="http://wjw.beijing.gov.cn/"  target="_blank">北京市卫生健康委员会</a><a  href="http://www.cams.ac.cn/"  target="_blank">中国医学科学院</a><a  href="http://www.pumf.org/"  target="_blank">北京协和医学基金会</a><a  href="http://www.xiehekjkf.com/"  target="_blank">协和科技开发有限责任公司</a><a class="last" href="http://www.xiehejx.com/"  target="_blank">协和化妆品</a>    </div>
+    </div></div>    <div class="copy"><div class="wrap cf">
+    <div class="left">
+        <div class="siteMap">
+            <a href="../Hospital/sitemap.html">网站地图</a><a href="../Hospital/research/gudie.html">关于我们</a>        </div>
+        <p class="cf address"><span>地　　址：</span><span class="div"><b>（东单院区）北京市东城区帅府园一号，100730；</b><b>（西单院区）北京市西城区大木仓胡同41号，100032</b></span></p>
+        <p>服务热线： 010-69156114</p>
+    </div>
+    <div class="right">
+        <p>Copyright 北京协和医院 All Rights Reserved. 本站内容仅供参考，不作为诊断及医疗依据            <br/> 京ICP 备 05067313号-1 文保网安备案号：1101010023 京卫网审字【2014】第39号</p>
+        <p><a href="http://www.fractal-technology.com" target="_blank">网站建设</a>：<a href="http://www.fractal-technology.com" target="_blank">北京分形科技</a></p>
+    </div>
+</div></div></div>
+<script>
+    window.onload = function(){
+        if($(window).width()<1262){
+            anchor();
+            //监听触发操作
+            function hashChangeFire(){
+                var hh = 10;
+                if($('.header').css("position") === "fixed"){
+                    hh = hh+$('.header').height();
+                }
+                var id = window.location.href.split('#');
+                id = '#'+id[id.length-1];
+                try{
+                    $('html,body').animate({scrollTop:$(id).offset().top-hh});
+                }catch (e){
+                    console.log(e);
+                }
+            }
+            //url变化监听器
+            if( ('onhashchange' in window) && ((typeof document.documentMode==='undefined') || document.documentMode==8)) {
+                // 浏览器支持onhashchange事件
+                window.onhashchange = hashChangeFire;  // TODO，对应新的hash执行的操作函数
+            } else {
+                // 不支持则用定时器检测的办法
+                setInterval(function() {
+                    // 检测hash值或其中某一段是否更改的函数， 在低版本的iE浏览器中通过window.location.hash取出的指和其它的浏览器不同，要注意
+                    var ischanged = isHashChanged();
+                    if(ischanged) {
+                        hashChangeFire();  // TODO，对应新的hash执行的操作函数
+                    }
+                }, 150);
+            }
+        }
+    }
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?e433a0b553c50c4663c2ef927781bc71";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?fa06b5d83a50d14d11bd70f117d24063";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script type="text/javascript">
+    var cnzz_protocol = (("https:" === document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1272450198'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1272450198%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+
+</html>
